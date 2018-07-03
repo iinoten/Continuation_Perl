@@ -16,3 +16,4 @@ sub get_provisions_list {
 }
 
 my @all_with_names = get_provisions_list( );
+#リストを返すコード
