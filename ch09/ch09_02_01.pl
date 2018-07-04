@@ -1,0 +1,1 @@
+my $regex = eval {qr/Gilligan|Skipper/};
