@@ -1,0 +1,11 @@
+Script started on Wed Jul 11 16:16:53 2018
+[?1034hbash-3.2$ script [K/pastured[K
+bash: script/pasture: No such file or directory
+bash-3.2$ touch script[Kt/pastured[K
+touch: script/pasture: No such file or directory
+bash-3.2$ put file is typescript
+[?1034hbash-3.2$ script [K/pastured[K
+bash: script/pasture: No such file or directory
+bash-3.2$ touch script[Kt/pastured[K
+touch: script/pasture: No such file or directory
+bash-3.2$ 
