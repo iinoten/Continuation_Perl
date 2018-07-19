@@ -1,0 +1,2 @@
+use Mouse;
+Mouse -> speak;

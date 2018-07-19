@@ -1,3 +1,5 @@
 sub speak {
-    print "a Horse goes neigh!\n";
+    my $class = shift;
+    print "a $class goes neight!\n";
 }
+1;

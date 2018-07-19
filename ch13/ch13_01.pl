@@ -1,0 +1,2 @@
+use Cow;
+Cow->speak;

@@ -1,3 +1,6 @@
+sub sound { 'mooo' }
 sub speak {
-    print "a Cow goes moooo!\n";
+        my $class = shift;
+        print "a $class goes",$class -> sound,"!\n;
 }
+1;

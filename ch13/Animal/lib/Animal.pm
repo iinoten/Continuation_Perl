@@ -6,7 +6,12 @@ use warnings;
 
 require Exporter;
 sub speak {
-    print "a Cow goes moooo!\n";
+    my $class = shift;
+    print "a $class goes",$class->sound,"!\n" 
+}
+
+sub sound {
+    die  'you have to difine sound() in a subslee'
 }
 
 
