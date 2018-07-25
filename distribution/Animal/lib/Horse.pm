@@ -3,12 +3,23 @@ package Horse;
 use 5.006;
 use strict;
 use warnings;
+use parent qw(Animal);
 
 sub sound {'neigh'}
 sub speak {
     my $class = shift;
     print "a $class goes ",$class->sound,"!\n";
 }
+sub name {
+    my $self = shift;
+    $$self;
+}
+sub named {
+    my $class = shift;
+    my $name =shift;
+    bless \$name,$class;
+}
+
 =head1 NAME
 
 Horse - The great new Horse!
