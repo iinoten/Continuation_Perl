@@ -12,6 +12,18 @@ sub sound {
     die 'You have to define sound() in a subclass'
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 =head1 NAME
 
 Animal - The great new Animal!

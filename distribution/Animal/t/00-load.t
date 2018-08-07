@@ -1,13 +1,12 @@
 #!perl -T
-use 5.006;
-use strict;
-use warnings;
-use Test::More;
 
-plan tests => 1;
 
 BEGIN {
-    use_ok( 'Animal' ) || print "Bail out!\n";
-}
+    my @classes = qw(Animal.pm Cow.pm  Horse.pm Mouse.pm Sheep.pm);
+    my $num = @classes;
+    use Test::More tests => $num;
 
-diag( "Testing Animal $Animal::VERSION, Perl $], $^X" );
+    foreach my $class ( @classes ) {
+      use_ok( $class ) or print "Bail out! $class did not load!\n"
+    }
+}

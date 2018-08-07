@@ -3,6 +3,13 @@ package Cow;
 use 5.006;
 use strict;
 use warnings;
+use Moose;
+use namespace::autoclean;
+with 'Animal';
+sub default_color { 'spotted' }
+sub sound { 'moooo' }
+
+__PACKAGE__->meta->make_immutable;
 
 
 sub speak {

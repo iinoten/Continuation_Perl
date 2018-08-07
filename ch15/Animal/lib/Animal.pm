@@ -40,4 +40,23 @@ sub set_name {
     $self -> {Color} = shift;
 }
 
+sub AUTOLOAD {
+    our $AUTOLOAD;
+    (my $method = $AUTOLOAD) =~ s/.*:://s #パッケージっぽいところを消す
+    if ($method = "eat") {
+        eval q{
+            sub eat{
+                long
+                definition
+                goes
+                here
+            }
+        };
+        die $@ if $@;
+        goto &eat;
+        } else {
+            croak "$_[0] does not know how to $method";
+        }
+    }
+}
 1;

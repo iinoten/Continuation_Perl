@@ -10,3 +10,4 @@ sub check_required_item {
         }
     }
 }
+#持ち物を確認するサブルーチン

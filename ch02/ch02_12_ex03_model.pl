@@ -1,5 +1,5 @@
-use Buisines::ISBN;
-my $isbn = Buisines::ISBN->new($ARGV);
+use Busines::ISBN;
+my $isbn = Business::ISBN->new($ARGV[0]);
 
 print "SBN is ".$isbn->as_string."\n";
 print "country code:"/ $isbn->countrycode."\n";

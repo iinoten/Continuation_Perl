@@ -7,7 +7,7 @@ my %passenger_1 = (
     age => 22,
     occupation => 'Movie Star',
     real_age => 35,
-    hat => undef,
+    hat => undef, 
 );
 
 my %passenger_2 (

@@ -7,7 +7,8 @@ while (<>) {
     $total_bytes{$source}{$all} += $bytes;
 }
 
-for my @source (@source) =
+for my $source (@sources) {
+    my @destinations =
     sort {$total_bytes{$b}{$all} <=> $total_bytes{$a}{$all} }
     keys %{ $total_bytes{$source} };
 print "$source:$total_bytes{$source}{$all} total bytes sent\n";
@@ -17,4 +18,4 @@ for my $destination (@destinations) {
     "$total_bytes{$source}{$destination}bytes\n";
 }
  print "\n";
-}#バージョンがあってない？？
+}

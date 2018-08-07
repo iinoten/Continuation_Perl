@@ -6,9 +6,9 @@ my $data_files = "total_bytes.json";
 my $total_bytes;
 if (-e $data_file) {
     local $/;
-    open my $fh,'<:raw', $data_file;
+    open my $fh,'<:raw', $data_file;    #crlfの逆？
     $json_text = <$fh>;
-    $total_bytes = decode_json($json_text);
+    $total_bytes = decode_json($json_text); #デコードして$json_textに収納する
 }
 
 while (<>) {
@@ -20,7 +20,7 @@ while (<>) {
 }
 
 {
-    open my $fh, '>:utf8', $data_file;
+    open my $fh, '>:utf8', $data_file;      #utf-8を指定しなければいけない
     print $fh to_json( $total_bytes, { pretty => 1} );
 }
 

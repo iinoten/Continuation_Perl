@@ -6,6 +6,7 @@ use warnings;
 use parent qw(Animal);
 
 sub sound {'neigh'}
+
 sub speak {
     my $class = shift;
     print "a $class goes ",$class->sound,"!\n";

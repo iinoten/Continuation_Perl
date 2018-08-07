@@ -12,16 +12,16 @@ sub sound {
     die 'You have to define sound() in a subclass'
 }
 
+sub name {
+  my $self = shift;
+  $$self;
+}
 
-
-
-
-
-
-
-
-
-
+sub named {
+  my $class = shift;
+  my $name = shift;
+  bless \$name,$class;
+}
 
 
 =head1 NAME

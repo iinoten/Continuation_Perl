@@ -7,6 +7,6 @@ while( <STDIN> ) {
         print "Match:$_";
     }
     if( $@ ) {
-        die "There was aregex problem: $@\n";
+        die "There was a regex problem: $@\n";  # 直前のevalコマンドのエラーメッセージ
     }
 }
