@@ -1,54 +1,21 @@
-package Animal;
+package Mouse;
 
 use 5.006;
 use strict;
 use warnings;
 
+use parent qw(Animal);
+
+sub sound { 'squeak' }
 sub speak {
-  my $either = shift;
-  print $either->name, ' goes ', $either->sound, "\n";
-}
-
-sub sound {
-  die 'You have to define sound()in a subclass'
-}
-#speakとsoundのためのプレースホルダ(仮の場所？)を設定
-
-sub name {
-  my $either = shift;
-  ref $either #ref演算子
-    ? $$either  #インスタンスだとそのまま名前を返す
-    :"an unnamed $either";  #クラスだとそのまま汎用の値を返す
-}
-
-sub named {
   my $class = shift;
-  my $name = shift;
-  my $self = { Name => $name,Color => $class->default_color };
-  bless $self,$class;
-}
-
-sub default_color { 'brown' }
-
-sub eat {
-  my $either = shift;
-  my $food = shift;
-  print $either->name, "eats $food.\n";
-}
-
-sub color {
-  my $self = shift;
-  $self->{Color};
-}
-
-sub set_color {
-  my $self = shift;
-  $self->{Color} = shift;
+  $class->SUPER::speak(@_); #SUPERをつかうことで@ISAにふくまれる全部が検索される`
+  print "[but you can barely hear it!]\n";
 }
 
 =head1 NAME
 
-Animal - The great new Animal!
+Mouse - The great new Mouse!
 
 =head1 VERSION
 
@@ -65,9 +32,9 @@ Quick summary of what the module does.
 
 Perhaps a little code snippet.
 
-    use Animal;
+    use Mouse;
 
-    my $foo = Animal->new();
+    my $foo = Mouse->new();
     ...
 
 =head1 EXPORT
@@ -97,8 +64,8 @@ Iino2511, C<< <ino at seesaa.co.jp> >>
 
 =head1 BUGS
 
-Please report any bugs or feature requests to C<bug-animal at rt.cpan.org>, or through
-the web interface at L<https://rt.cpan.org/NoAuth/ReportBug.html?Queue=Animal>.  I will be notified, and then you'll
+Please report any bugs or feature requests to C<bug-. at rt.cpan.org>, or through
+the web interface at L<https://rt.cpan.org/NoAuth/ReportBug.html?Queue=.>.  I will be notified, and then you'll
 automatically be notified of progress on your bug as I make changes.
 
 
@@ -108,7 +75,7 @@ automatically be notified of progress on your bug as I make changes.
 
 You can find documentation for this module with the perldoc command.
 
-    perldoc Animal
+    perldoc Mouse
 
 
 You can also look for information at:
@@ -117,19 +84,19 @@ You can also look for information at:
 
 =item * RT: CPAN's request tracker (report bugs here)
 
-L<https://rt.cpan.org/NoAuth/Bugs.html?Dist=Animal>
+L<https://rt.cpan.org/NoAuth/Bugs.html?Dist=.>
 
 =item * AnnoCPAN: Annotated CPAN documentation
 
-L<http://annocpan.org/dist/Animal>
+L<http://annocpan.org/dist/.>
 
 =item * CPAN Ratings
 
-L<https://cpanratings.perl.org/d/Animal>
+L<https://cpanratings.perl.org/d/.>
 
 =item * Search CPAN
 
-L<https://metacpan.org/release/Animal>
+L<https://metacpan.org/release/.>
 
 =back
 
@@ -180,4 +147,4 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 =cut
 
-1; # End of Animal
+1; # End of Mouse

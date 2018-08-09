@@ -14,10 +14,15 @@ Cow/xt/boilerplate.t
 lib/Animal.pm
 lib/Cow.pm
 lib/Horse.pm
+lib/Mouse.pm
 lib/Sheep.pm
 Makefile.PL
 MANIFEST			This list of files
 README
+script/call-Cow.pl
+script/pasture.pl
+script/pastures.pl
+script/refspasture.pl
 t/00-load.t
 t/manifest.t
 t/pod-coverage.t

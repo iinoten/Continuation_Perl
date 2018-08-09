@@ -12,6 +12,8 @@ Cow/t/pod-coverage.t
 Cow/t/pod.t
 Cow/xt/boilerplate.t
 lib/Animal.pm
+lib/Cow.pm
+lib/Horse.pm
 lib/Sheep.pm
 Makefile.PL
 MANIFEST			This list of files

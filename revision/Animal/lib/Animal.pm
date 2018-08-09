@@ -4,6 +4,49 @@ use 5.006;
 use strict;
 use warnings;
 
+sub speak {
+  my $either = shift;
+  print $either->name, ' goes ', $either->sound, "\n";
+}
+
+sub sound {
+  die 'You have to define sound()in a subclass'
+}
+#speakとsoundのためのプレースホルダ(仮の場所？)を設定
+
+sub name {
+  my $either = shift;
+  ref $either #ref演算子
+    ? $$either  #インスタンスだとそのまま名前を返す
+    :"an unnamed $either";  #クラスだとそのまま汎用の値を返す
+}
+
+sub named {
+  my $class = shift;
+  my $name = shift;
+  my $self = { Name => $name,Color => $class->default_color };
+  bless $self,$class;
+}
+
+sub default_color { 'brown' }
+
+sub eat {
+  my $either = shift;
+  my $food = shift;
+  print $either->name, "eats $food.\n";
+}
+
+sub color {
+  my $self = shift;
+  $self->{Color};
+}
+
+sub set_color {
+  my $self = shift;
+  $self->{Color} = shift;
+
+}
+
 =head1 NAME
 
 Animal - The great new Animal!

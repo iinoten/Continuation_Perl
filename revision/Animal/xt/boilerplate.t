@@ -12,7 +12,6 @@ sub not_in_file_ok {
         or die "couldn't open $filename for reading: $!";
 
     my %violated;
-
     while (my $line = <$fh>) {
         while (my ($desc, $regex) = each %regex) {
             if ($line =~ $regex) {
